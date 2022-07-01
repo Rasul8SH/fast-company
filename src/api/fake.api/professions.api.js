@@ -15,11 +15,12 @@ export const professions = [
   { _id: "67rdca3eeb7f6fgeed471829", name: "Повар" }
 ]
 
-const fetchAll = () => new Promise((resolve) => {
-  window.setTimeout(() => {
-    resolve(professionsObject)
-  }, 2000)
-})
+const fetchAll = () =>
+  new Promise((resolve) => {
+    window.setTimeout(() => {
+      resolve(professionsObject)
+    }, 2000)
+  })
 
 export default {
   fetchAll
