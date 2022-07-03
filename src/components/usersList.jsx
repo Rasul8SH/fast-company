@@ -61,40 +61,42 @@ const UsersList = () => {
     }
 
     return (
-      <div className="d-flex ">
-        {professions && (
-          <div className="d-flex flex-column flex-shrink-0 p-3">
-            <GroupList
-              selectedItem={selectedProf}
-              items={professions}
-              onItemSelect={handleProfessionSelect}
-            />
-            <button className="btn btn-secondary m-2" onClick={clearFilter}>
-              Очистить
-            </button>
-          </div>
-        )}
-
-        <div className="d-flex flex-column">
-          <SearchStatus users={count} />
-          {count > 0 && (
-            <UsersTable
-              users={userCrop}
-              selectedSort={sortBy}
-              onDelete={handleDelete}
-              onBookmark={handleToggleBookmark}
-              onSort={handleSort}
-            />
+      <>
+        <div className="d-flex ">
+          {professions && (
+            <div className="d-flex flex-column flex-shrink-0 p-3">
+              <GroupList
+                selectedItem={selectedProf}
+                items={professions}
+                onItemSelect={handleProfessionSelect}
+              />
+              <button className="btn btn-secondary m-2" onClick={clearFilter}>
+                Очистить
+              </button>
+            </div>
           )}
 
-          <Pagination
-            itemsCount={count}
-            pageSize={pageSize}
-            currentPage={currentPage}
-            onPageChange={handlePageChange}
-          />
+          <div className="d-flex flex-column">
+            <SearchStatus users={count} />
+            {count > 0 && (
+              <UsersTable
+                users={userCrop}
+                selectedSort={sortBy}
+                onDelete={handleDelete}
+                onBookmark={handleToggleBookmark}
+                onSort={handleSort}
+              />
+            )}
+
+            <Pagination
+              itemsCount={count}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
+          </div>
         </div>
-      </div>
+      </>
     )
   }
   return "loading..."
