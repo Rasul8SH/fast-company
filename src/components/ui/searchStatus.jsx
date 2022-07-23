@@ -5,7 +5,10 @@ const SearchStatus = ({ users }) => {
   return (
     <h2>
       <span className={"badge text-bg-" + (users > 0 ? "primary" : "danger")}>
-        {users > 0 ? `${users} человек тусанёт с тобой сегодня` : `Никто с тобой не тусанёт`}
+        {users > 0
+          ? `${users} человек тусанёт с тобой сегодня`
+          : `Никто с тобой не тусанёт`
+        }
       </span>
     </h2>
   )
